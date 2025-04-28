@@ -26,7 +26,7 @@ export default function SensitiveWordChecker() {
   const checkText = () => {
     const matches = [];
     sensitiveWords.forEach(({ word, type, level, suggestion }) => {
-      const pattern = new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g");
+      const pattern = new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gu");
       if (pattern.test(input)) {
         matches.push({ word, type, level, suggestion });
       }
